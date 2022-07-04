@@ -18,7 +18,7 @@ const initialization: redurSong =
 
 
 export const songReducer = (state: redurSong = initialization, action: Action) => {
-    
+
     switch (action.type) {
         case "ADD_SONG":
 
@@ -26,20 +26,18 @@ export const songReducer = (state: redurSong = initialization, action: Action) =
                 ...state,
                 listSong: [...state.listSong, action.payload]
             }
-    
+
         case "DELETE_SONG":
-return (state.listSong.filter((song: SongModel) => song.id !== action.payload))
+            return (state.listSong.filter((song: SongModel) => song.id !== action.payload))
         case "EDIT_SONG":
-return (state.listSong.filter((editSong: SongModel) => editSong.id !== action.payload.id)
-    //  state: { listSong: [...state.listSong,action.payload] }
-)
+            return (state.listSong.filter((editSong: SongModel) => editSong.id !== action.payload.id)
+                //  state: { listSong: [...state.listSong,action.payload] }
+            )
 
 
 
 
-        default: return {
-    state
-}
+          default  :return {state}
     }
 
 
